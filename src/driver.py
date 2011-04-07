@@ -8,7 +8,7 @@ import inspect
 import src
 
 
-def print_classes():
+def run_solvers():
     for name, obj in inspect.getmembers(src):
         if inspect.ismodule(obj) and name != 'os' and name != 'driver':
             if 'solve' in obj.__dict__:
@@ -16,5 +16,5 @@ def print_classes():
                 print(name, ': ', solver.__doc__, "\nanswer: ", solver(), "\n\n", ''.join(['*'] * 50), "\n")
 
 if __name__ == '__main__':
-    print_classes()
+    run_solvers()
     
