@@ -13,7 +13,7 @@ def print_classes():
         if inspect.ismodule(obj) and name != 'os' and name != 'driver':
             if 'solve' in obj.__dict__:
                 solver = obj.__dict__['solve']
-                print(name, ': ', solver())
+                print(name, ': ', solver.__doc__, "\nanswer: ", solver(), "\n\n", ''.join(['*'] * 50), "\n")
 
 if __name__ == '__main__':
     print_classes()
